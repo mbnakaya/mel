@@ -40,11 +40,11 @@ tasks.named('test') {
 }
 
 task stage(dependsOn: ['build', 'clean'])
-build.mustRunAfter clean
-
-task copyToLib(type: Copy) {
-	into "$buildDir/libs"
-	from(configurations.implementation)
-}
-
-stage.dependsOn(copyToLib)
+//build.mustRunAfter clean
+//
+//task copyToLib(type: Copy) {
+//	into "$buildDir/libs"
+//	from(configurations.implementation)
+//}
+//
+//stage.dependsOn(copyToLib)
