@@ -15,12 +15,20 @@ public class RegisterController {
 
     @PostMapping
     public UserDTO createUser(@RequestBody UserDTO body) {  //TODO: CREATE VALIDATION ON REQUEST BODY
-        User user = service.createAccount(body.toDomain());
+        User user = service.createUser(body.toDomain());
+        return UserDTO.fromDomain(user);
+    }
+
+    @GetMapping("/{id}")
+    public UserDTO getUser(@PathVariable Long id) {
+        User user = service.getUser(id);
         return UserDTO.fromDomain(user);
     }
 
     @PutMapping("/{id}")
     public UserDTO updateAccount(@RequestBody UserDTO body, @PathVariable Long id) {
-        return body;
+        body.setId(id);
+        User user = service.updateUser(body.toDomain());
+        return UserDTO.fromDomain(user);
     }
 }

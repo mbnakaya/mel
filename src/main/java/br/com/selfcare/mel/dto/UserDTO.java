@@ -13,6 +13,8 @@ import java.util.List;
 @Builder
 public class UserDTO {
     private Long id;
+    private String email;
+    private String password;
     private String fullName;
     private Boolean isProvider;
     private DocumentDTO document;
@@ -26,6 +28,7 @@ public class UserDTO {
 
         return UserDTO.builder()
                 .id(user.getId())
+                .email(user.getEmail())
                 .fullName(user.getFullName())
                 .isProvider(user.getIsProvider())
                 .document(DocumentDTO.fromDomain(user.getDocument()))
@@ -40,6 +43,8 @@ public class UserDTO {
 
         return User.builder()
                 .id(this.getId())
+                .email(this.getEmail())
+                .password(this.getPassword())
                 .fullName(this.getFullName())
                 .isProvider(this.getIsProvider())
                 .document(this.document.toDomain())

@@ -1,7 +1,9 @@
 package br.com.selfcare.mel.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -13,6 +15,8 @@ import java.util.List;
 @Builder
 @Entity
 @Table(name = "users")
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -30,7 +34,7 @@ public class User {
     @JoinColumn(name = "address_id", referencedColumnName = "id")
     private List<Address> addresses;
     @CreationTimestamp
-    @Column(name = "created_at")
+    @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
     @UpdateTimestamp
     @Column(name = "updated_at")

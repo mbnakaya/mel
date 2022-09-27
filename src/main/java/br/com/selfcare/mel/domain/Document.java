@@ -1,7 +1,9 @@
 package br.com.selfcare.mel.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name = "documents")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

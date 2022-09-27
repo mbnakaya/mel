@@ -13,7 +13,17 @@ public class RegisterServiceImpl implements RegisterService {
     private UserRepository userRepository;
 
     @Override
-    public User createAccount(User user) {
+    public User createUser(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public User getUser(Long id) {
+        return userRepository.getReferenceById(id);
+    }
+
+    @Override
+    public User updateUser(User user) {
         return userRepository.save(user);
     }
 }
