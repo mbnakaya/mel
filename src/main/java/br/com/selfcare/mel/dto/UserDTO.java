@@ -17,6 +17,7 @@ public class UserDTO {
     private String email;
     private String password;
     private String fullName;
+    private String phone;
     private Boolean isProvider;
 //    private DocumentDTO document;
 //    private List<AddressDTO> addresses;
@@ -30,6 +31,7 @@ public class UserDTO {
         return UserDTO.builder()
                 .id(user.getId())
                 .email(user.getEmail())
+                .phone(user.getPhone())
                 .fullName(user.getFullName())
                 .isProvider(user.getIsProvider())
 //                .document(DocumentDTO.fromDomain(user.getDocument()))
@@ -47,6 +49,7 @@ public class UserDTO {
                 .email(this.getEmail())
                 .password(this.getPassword())
                 .fullName(this.getFullName())
+                .phone(this.getPhone())
                 .isProvider(this.getIsProvider())
 //                .document(this.document.toDomain())
 //                .addresses(addresses)

@@ -24,6 +24,7 @@ public class User {
     private String password;
     @Column(name = "full_name")
     private String fullName;
+    private String phone;
     @Column(name = "is_provider")
     private Boolean isProvider;
 //    @OneToOne(cascade = CascadeType.ALL)
