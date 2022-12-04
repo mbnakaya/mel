@@ -1,6 +1,6 @@
 package br.com.selfcare.mel.dto;
 
-import br.com.selfcare.mel.domain.Address;
+//import br.com.selfcare.mel.domain.Address;
 import br.com.selfcare.mel.domain.User;
 import lombok.Builder;
 import lombok.Data;
