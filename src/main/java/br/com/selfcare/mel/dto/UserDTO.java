@@ -15,7 +15,6 @@ import java.util.List;
 public class UserDTO {
     private Long id;
     private String email;
-    @JsonIgnore
     private String password;
     private String fullName;
     private Boolean isProvider;
