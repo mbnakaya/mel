@@ -4,6 +4,8 @@ import br.com.selfcare.mel.domain.User;
 import br.com.selfcare.mel.dto.UserDTO;
 import br.com.selfcare.mel.services.interfaces.RegisterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,9 +17,9 @@ public class RegisterController {
     private RegisterService service;
 
     @PostMapping
-    public UserDTO createUser(@RequestBody UserDTO body) {
+    public ResponseEntity createUser(@RequestBody UserDTO body) {
         User user = service.createUser(body.toDomain());
-        return UserDTO.fromDomain(user);
+        return new ResponseEntity(UserDTO.fromDomain(user), HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
