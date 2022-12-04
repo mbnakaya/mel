@@ -1,5 +1,6 @@
 package br.com.selfcare.mel.controllers;
 
+import br.com.selfcare.mel.domain.LoginFailedException;
 import br.com.selfcare.mel.dto.LoginDTO;
 import br.com.selfcare.mel.services.interfaces.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ public class LoginController {
 
     @PostMapping
     public void login(@RequestBody LoginDTO body) {
-        service.login(body.getEmail(), body.getPassword());
+        if (service.login(body.getEmail(), body.getPassword()))
+            return;
+        else throw new LoginFailedException();
     }
 }
