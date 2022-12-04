@@ -2,6 +2,7 @@ package br.com.selfcare.mel.dto;
 
 //import br.com.selfcare.mel.domain.Address;
 import br.com.selfcare.mel.domain.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Builder;
 import lombok.Data;
 
@@ -14,6 +15,7 @@ import java.util.List;
 public class UserDTO {
     private Long id;
     private String email;
+    @JsonIgnore
     private String password;
     private String fullName;
     private Boolean isProvider;
