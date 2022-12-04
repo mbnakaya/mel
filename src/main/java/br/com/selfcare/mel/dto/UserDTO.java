@@ -17,29 +17,29 @@ public class UserDTO {
     private String password;
     private String fullName;
     private Boolean isProvider;
-    private DocumentDTO document;
-    private List<AddressDTO> addresses;
+//    private DocumentDTO document;
+//    private List<AddressDTO> addresses;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     public static UserDTO fromDomain(User user) {
-        List<AddressDTO> addresses = new ArrayList<>();
-        user.getAddresses().forEach(address -> addresses.add(AddressDTO.fromDomain(address)));
+//        List<AddressDTO> addresses = new ArrayList<>();
+//        user.getAddresses().forEach(address -> addresses.add(AddressDTO.fromDomain(address)));
 
         return UserDTO.builder()
                 .id(user.getId())
                 .email(user.getEmail())
                 .fullName(user.getFullName())
                 .isProvider(user.getIsProvider())
-                .document(DocumentDTO.fromDomain(user.getDocument()))
-                .addresses(addresses)
+//                .document(DocumentDTO.fromDomain(user.getDocument()))
+//                .addresses(addresses)
                 .createdAt(user.getCreatedAt())
                 .updatedAt(user.getUpdatedAt())
                 .build();
     }
     public User toDomain() {
-        List<Address> addresses = new ArrayList<>();
-        this.addresses.forEach(addressDTO -> addresses.add(addressDTO.toDomain()));
+//        List<Address> addresses = new ArrayList<>();
+//        this.addresses.forEach(addressDTO -> addresses.add(addressDTO.toDomain()));
 
         return User.builder()
                 .id(this.getId())
@@ -47,8 +47,8 @@ public class UserDTO {
                 .password(this.getPassword())
                 .fullName(this.getFullName())
                 .isProvider(this.getIsProvider())
-                .document(this.document.toDomain())
-                .addresses(addresses)
+//                .document(this.document.toDomain())
+//                .addresses(addresses)
                 .createdAt(this.getCreatedAt())
                 .updatedAt(this.getUpdatedAt())
                 .build();

@@ -15,7 +15,7 @@ public class RegisterController {
     private RegisterService service;
 
     @PostMapping
-    public UserDTO createUser(@RequestBody UserDTO body) {  //TODO: CREATE VALIDATION ON REQUEST BODY
+    public UserDTO createUser(@RequestBody UserDTO body) {
         User user = service.createUser(body.toDomain());
         return UserDTO.fromDomain(user);
     }

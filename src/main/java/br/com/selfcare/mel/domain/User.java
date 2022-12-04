@@ -27,12 +27,12 @@ public class User {
     private String fullName;
     @Column(name = "is_provider")
     private Boolean isProvider;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "document_id", referencedColumnName = "id")
-    private Document document;
-    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    private List<Address> addresses;
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "document_id", referencedColumnName = "id")
+//    private Document document;
+//    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+//    @JoinColumn(name = "address_id", referencedColumnName = "id")
+//    private List<Address> addresses;
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
