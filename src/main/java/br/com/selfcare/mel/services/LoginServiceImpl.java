@@ -13,8 +13,8 @@ public class LoginServiceImpl implements LoginService {
     private UserRepository userRepository;
 
     @Override
-    public Boolean login(String email, String password) {
+    public User login(String email, String password) {
         User user = userRepository.findByEmailAndPassword(email, password);
-        return user != null;
+        return user;
     }
 }
